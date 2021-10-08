@@ -7,27 +7,28 @@ import styled from 'styled-components';
 
 
 const CharBox = styled.div`
-    border: 3px solid grey;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color: #A3643E;
+    border: 3px solid maroon;
     border-radius: 5px;
     margin: 2% 0;
     padding: 2% 5%;
     width: 50%;
 
 `
+const CharName = styled.h2`
+    font-family:Arial, Helvetica, sans-serif;
+`
+
+const BornP = styled.p`
+    font-weight: bold;
+    color: white;
+`
 
 export default function Character(props) {
-    const { character } = props;
+    const { character, birthYear } = props;
 
-    // const [films, setFilms] = useState('')
-
-    // axios.get('https://swapi.dev/api/films')
-    //     .then(res => {
-    //         console.log(res.data)
-    //     })
-    //     .catch(err => {
-    //         console.error(err)
-    //     })
-    // revisit if time allows
-
-    return <CharBox><h2>{character}</h2></CharBox>
+    return <CharBox><CharName>{character}</CharName><BornP>Born: {birthYear}</BornP></CharBox>
 }

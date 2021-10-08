@@ -30,7 +30,7 @@ const App = () => {
     axios.get('https://swapi.dev/api/people')
       .then(res => {
         // console.log(res.data);
-        setCharacters(res.data.map((char, idx) => res.data[idx]['name']));
+        setCharacters(res.data);
       })
       .catch(err => console.error(err))
   }, [])
@@ -40,8 +40,9 @@ const App = () => {
       <h1 className="Header">Characters</h1>
       <Container>
         {characters.map((char, idx) => {
-        return <Character character={char} key={idx}/>
-      })}
+          return <Character character={char['name']} birthYear={char['birth_year']} key={idx}/>
+        })
+        }
       </Container>
     </div>
   )
