@@ -1,6 +1,5 @@
 // Write your Character component here
-import React, { useState } from 'react';
-// import axios from 'axios';
+import React from 'react';
 import '../../src/App.css';
 import styled from 'styled-components';
 
@@ -26,22 +25,13 @@ const BornP = styled.p`
     font-weight: bold;
     color: white;
 `
-const NameDetails = styled.div`
-    display: flex;
-    flex-direction: column;
-`
+
 
 export default function Character(props) {
-    const { characters, character, birthYear } = props;
-
-    const [details, setDetails] = useState(false)
+    const { character, birthYear } = props;
 
     return <CharBox>
-                <NameDetails>
-                    <CharName>{character}</CharName>
-                    <button onClick={()=> setDetails(!details)}>More Details</button>
-                    {/* {details && <Details characters={characters}/> */}
-                </NameDetails>
+                <CharName>{character}</CharName>
                 <BornP>Born: {birthYear}</BornP>
             </CharBox>
 }
