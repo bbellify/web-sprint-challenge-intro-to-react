@@ -80,7 +80,13 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
-  React JS is a 
+  React JS is a JavaScript library for building web applications. The problem that it is trying to solve is the following: as our applications get more and more complex, where we want to track lots of events and the state of lots of data that is changing across time (often changing due to user interaction) and display a web experience based on all of this changing data, having to use vanilla JS to explicitly target DOM elements, create new DOM elements, etc gets extremely cumbersome. Even a fairly simple single-page web app can grow quite unwieldy with vanilla JS, particularly if you have similar elements that get repeated many times. Scaling this up quickly becomes very difficult to work with. 
+
+  Thus, one major benefit of using React is the ability to build out components, which are basically chunks of code (functions) that we can reuse whenever necessary. Inside a React component we can write JS code, build out HTML elements, and can even style inline (there are also other solutions for styling) - all in the same place! This alone makes React a very elegant solution to having to navigate multiple documents, having to repeat similar chunks of code, etc.
+
+  In addition to abstracting away some cumbersome lines of code, what React is perhaps even more useful for is how it tracks state, potentially up to across millions of users and variables, and renders a web experience that reflects this potentially constantly changing data. An analogy I found that I like is the following: imagine the DOM is a fence, and you're tasked with painting the fence, and every day there are minor new changes to be made to one or two boards of the fence. React keeps track of these new rules and can track down each individual fence board and apply the new rules, effectively freshly painting just the necessary boards, without having to repaint the entire fence every time you want to make a change. 
+
+  In short, React is a JS library with lots of tools to streamline the production of web apps, all the way up to enterprise scale, solving the problem of how to display a web experience that REACTS to user interaction. So far we have only seen a bit of its functionality, like state hooks and effect hooks. 
 
 1. Describe component state.
 
