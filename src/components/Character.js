@@ -19,9 +19,12 @@ const CharBox = styled.div`
 `
 const CharName = styled.h2`
     font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
 `
 
 const BornP = styled.p`
+
     font-weight: bold;
     color: white;
 `

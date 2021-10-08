@@ -9,6 +9,13 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
 `
+const Header = styled.h1`
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  color: #443e3e;
+  text-shadow: 1px 1px 5px #fff;
+  margin-top: 2%;
+`
 
 const App = () => {
 
@@ -21,11 +28,6 @@ const App = () => {
 
   const [characters, setCharacters] = useState([]);
   
-  // const [charInfo, setCharInfo] = useState('');
-  // come back to char info after other tasks met
-
-
-  
   useEffect(() => {
     axios.get('https://swapi.dev/api/people')
       .then(res => {
@@ -37,7 +39,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">React Wars</h1>
+      <Header>React Wars</Header>
       <Container>
         {characters.map((char, idx) => {
           return <Character character={char['name']} birthYear={char['birth_year']} key={idx}/>
