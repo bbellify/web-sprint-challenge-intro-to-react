@@ -37,10 +37,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <h1 className="Header">React Wars</h1>
       <Container>
         {characters.map((char, idx) => {
-          return <Character characters= {characters} character={char['name']} birthYear={char['birth_year']} key={idx}/>
+          return <Character character={char['name']} birthYear={char['birth_year']} key={idx}/>
         })
         }
       </Container>
