@@ -79,6 +79,27 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Put your answers underneath the questions:
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
+
+  React JS is a 
+
 1. Describe component state.
+
+  State is a way of tracking the status (or state) of one or more variables in an application. This is useful because as a user interacts with our app, we probably want to change what is displayed based on the state of one or more variables. A simple example could be a lightbulb app that displays a lightbulb and an on/off button, where the on/off button changes the state of the lightbulb. What the user then sees depends on the state of the lightbulb - a yellow bulb if lightbulb is on, a clear one if the bulb is off. Although this is a simple example, it illustrates the role of state in conditional rendering.
+
+  State can be used by using the State Hook.
+
 1. Describe props.
+
+  Props most basically are arguments passed into React components. In this sprint we focused on props being set by state, so as the user interacts with the page, thus changing the state of certain variables, different arguments are passed into our components causing our page to render differently. 
+
+  Props are also used to pass data from one component to another. This could be useful if some state is set in a parent component, but a nested component needs access to it. 
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+  A side effect is anything that affects something outside the scope of the function being executed. In this sprint we mainly focused on API calls, but other examples include timers, changing global variables, manipulating the DOM, etc. 
+
+  Side effects can be triggered using the Effect Hook.
+
+  We can sync a side effect to changes in certain state or props by passing in a second argument into our effect hook. This argument is an array and can take a list of the variables we want to watch for changes in - when any of these variables (state/props) change, the effect hook fires. This will make the effect fire both when it first mounts, and when it sees changes in any of the listed dependencies. 
+
+  Additionally, if we want to fire the effect hook only upon first mounting, we can pass it an empty array.
