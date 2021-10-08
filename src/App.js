@@ -2,6 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import Character from './components/Character'
+import styled from 'styled-components'
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
 
 const App = () => {
 
@@ -13,14 +20,17 @@ const App = () => {
   // sync up with, if any.
 
   const [characters, setCharacters] = useState([]);
+  
+  // const [charInfo, setCharInfo] = useState('');
+  // come back to char info after other tasks met
 
 
   
   useEffect(() => {
     axios.get('https://swapi.dev/api/people')
       .then(res => {
-        // console.log(res.data[0]['name']);
-        setCharacters(res.data.map((char, idx) => res.data[idx]['name']))
+        // console.log(res.data);
+        setCharacters(res.data.map((char, idx) => res.data[idx]['name']));
       })
       .catch(err => console.error(err))
   }, [])
@@ -28,9 +38,13 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      <Character characters={characters}/>
+      <Container>
+        {characters.map((char, idx) => {
+        return <Character character={char} key={idx}/>
+      })}
+      </Container>
     </div>
-  );
+  )
 }
 
 export default App;

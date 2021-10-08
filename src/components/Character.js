@@ -1,13 +1,10 @@
 // Write your Character component here
-// import React, { useState, useEffect } from 'react';
+import React from 'react';
+// import axios from 'axios';
 import '../../src/App.css';
 import styled from 'styled-components';
 
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`
+
 
 const CharBox = styled.div`
     border: 3px solid grey;
@@ -19,14 +16,18 @@ const CharBox = styled.div`
 `
 
 export default function Character(props) {
+    const { character } = props;
 
-    const { characters } = props;
+    // const [films, setFilms] = useState('')
 
-    return (
-        <Container>
-            {characters.map((char, idx) => {
-                return <CharBox key={idx}><h2>{char}</h2></CharBox>
-            })}
-        </Container>
-    )
+    // axios.get('https://swapi.dev/api/films')
+    //     .then(res => {
+    //         console.log(res.data)
+    //     })
+    //     .catch(err => {
+    //         console.error(err)
+    //     })
+    // revisit if time allows
+
+    return <CharBox><h2>{character}</h2></CharBox>
 }
